@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c87tao3rpwisu"]
+
+[ext_resource type="Script" uid="uid://c37rcbvy0uaj6" path="res://Scripts/canvas.gd" id="1_o7qyo"]
+
+[node name="Control" type="Control" unique_id=1145437825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o7qyo")
+
+[node name="backgroundImage" type="TextureRect" parent="." unique_id=184534808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="characterImage" type="TextureRect" parent="." unique_id=733208859]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.648
+anchor_bottom = 1.0
+offset_left = 403.0
+offset_right = -0.49597168
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sceneText" type="TextEdit" parent="." unique_id=1409679648]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21300001
+anchor_top = 0.582
+anchor_right = 0.78800005
+anchor_bottom = 0.88000005
+offset_left = -0.37602234
+offset_top = -0.13601685
+offset_right = 0.22393799
+offset_bottom = -0.24005127
+placeholder_text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+wrap_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=1248721234]
+layout_mode = 1
+anchor_left = 0.46500003
+anchor_top = 0.133
+anchor_right = 0.89100003
+anchor_bottom = 0.55200005
+offset_left = 0.3199463
+offset_top = -0.18399811
+offset_right = -0.43200684
+offset_bottom = -1.6960449
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=826234718]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 213.0
+offset_right = 442.0
+offset_bottom = 267.0
+
+[node name="TextureButton2" type="TextureButton" parent="Control" unique_id=262729494]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 157.0
+offset_right = 442.0
+offset_bottom = 211.0
+
+[node name="TextureButton3" type="TextureButton" parent="Control" unique_id=858084264]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 100.0
+offset_right = 442.0
+offset_bottom = 154.0
+
+[node name="TextureButton4" type="TextureButton" parent="Control" unique_id=1193419532]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 43.0
+offset_right = 442.0
+offset_bottom = 97.0
