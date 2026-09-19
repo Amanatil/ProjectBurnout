@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://chl58ioipub8n"]
+
+[ext_resource type="Script" uid="uid://c37rcbvy0uaj6" path="res://Scripts/main_scene.gd" id="1_tr2i4"]
+[ext_resource type="PackedScene" uid="uid://c87tao3rpwisu" path="res://Scenes/dialog_ui.tscn" id="2_nhkr4"]
+
+[node name="MainScene" type="Node2D" unique_id=9657605]
+script = ExtResource("1_tr2i4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1248667593]
+
+[node name="DialogUI" parent="CanvasLayer" unique_id=1145437825 instance=ExtResource("2_nhkr4")]

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c87tao3rpwisu"]
 
-[ext_resource type="Script" uid="uid://c37rcbvy0uaj6" path="res://Scripts/canvas.gd" id="1_o7qyo"]
+[ext_resource type="Script" uid="uid://cpvwpj0at7jd6" path="res://Scripts/dialog_ui.gd" id="1_o7qyo"]
+[ext_resource type="Texture2D" uid="uid://blgvphx4l6mca" path="res://Images/Background/background.png" id="2_dy63b"]
 
-[node name="Control" type="Control" unique_id=1145437825]
+[node name="DialogUI" type="Control" unique_id=1145437825]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,13 +12,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o7qyo")
 
-[node name="backgroundImage" type="TextureRect" parent="." unique_id=184534808]
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=184534808]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dy63b")
 
-[node name="characterImage" type="TextureRect" parent="." unique_id=733208859]
+[node name="CharacterImage" type="TextureRect" parent="." unique_id=733208859]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.648
@@ -27,7 +31,7 @@ offset_right = -0.49597168
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sceneText" type="TextEdit" parent="." unique_id=1409679648]
+[node name="SceneText" type="PanelContainer" parent="." unique_id=1397080516]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21300001
@@ -38,8 +42,10 @@ offset_left = -0.37602234
 offset_top = -0.13601685
 offset_right = 0.22393799
 offset_bottom = -0.24005127
-placeholder_text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
-wrap_mode = 1
+
+[node name="DialogLine" type="RichTextLabel" parent="SceneText" unique_id=750967219]
+layout_mode = 2
+text = "Initial Text"
 
 [node name="Control" type="Control" parent="." unique_id=1248721234]
 layout_mode = 1
