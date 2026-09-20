@@ -26,6 +26,10 @@ func _input(event: InputEvent) -> void:
 		if dialog_index < len(dialog_lines) - 1:
 			dialog_index += 1
 			process_current_line()
+			
+		if dialog_index == len(dialog_lines) - 1:
+			PlayerManager.update_stats(10, -5, 2500)
+			dialog_ui.set_stat()
 
 func parse_line(line: String):
 	var line_info = line.split(":")
@@ -39,3 +43,4 @@ func process_current_line():
 	var line = dialog_lines[dialog_index]
 	var line_info = parse_line(line)
 	dialog_ui.dialog_line.text = line_info['dialog_line']
+	dialog_ui.speaker_name.text = line_info['speaker_name']

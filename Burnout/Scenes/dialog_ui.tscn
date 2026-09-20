@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cpvwpj0at7jd6" path="res://Scripts/dialog_ui.gd" id="1_o7qyo"]
 [ext_resource type="Texture2D" uid="uid://blgvphx4l6mca" path="res://Images/Background/background.png" id="2_dy63b"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_al7ui"]
+
 [node name="DialogUI" type="Control" unique_id=1145437825]
 layout_mode = 3
 anchors_preset = 15
@@ -47,6 +49,22 @@ offset_bottom = -0.24005127
 layout_mode = 2
 text = "Initial Text"
 
+[node name="SpeakerName" type="PanelContainer" parent="." unique_id=1627626441]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21300001
+anchor_top = 0.508
+anchor_right = 0.462
+anchor_bottom = 0.57100004
+offset_left = -0.37602234
+offset_top = -0.184021
+offset_right = -0.22399902
+offset_bottom = -0.008026123
+
+[node name="SpeakerName" type="RichTextLabel" parent="SpeakerName" unique_id=1372984688]
+layout_mode = 2
+text = "Initial Text"
+
 [node name="Control" type="Control" parent="." unique_id=1248721234]
 layout_mode = 1
 anchor_left = 0.46500003
@@ -85,3 +103,47 @@ offset_left = 12.0
 offset_top = 43.0
 offset_right = 442.0
 offset_bottom = 97.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=160687819]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84000003
+anchor_top = 0.65400004
+anchor_right = 0.96400005
+anchor_bottom = 0.79200006
+offset_left = 0.3199463
+offset_top = 0.2079773
+offset_right = -0.5280762
+offset_bottom = -0.21606445
+
+[node name="HSplitContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1197024766]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerStatsList" type="ItemList" parent="PanelContainer/HSplitContainer" unique_id=1977047987]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+item_count = 3
+same_column_width = true
+item_0/text = "⚡Energy"
+item_0/icon = SubResource("ViewportTexture_al7ui")
+item_0/selectable = false
+item_1/text = "🤡Sanity"
+item_1/selectable = false
+item_2/text = "💰Money"
+item_2/selectable = false
+
+[node name="PlayerStatsValue" type="ItemList" parent="PanelContainer/HSplitContainer" unique_id=27894130]
+layout_mode = 2
+auto_width = true
+auto_height = true
+item_count = 3
+same_column_width = true
+item_0/text = "TEST"
+item_0/selectable = false
+item_1/text = "TEST"
+item_1/selectable = false
+item_2/text = "TEST"
+item_2/selectable = false
