@@ -1,0 +1,27 @@
+[
+	{"speaker": "You", "text": "You have been working in the ABC agency as a Senior Designer for 4 years."},
+	{"speaker": "You", "text": "Sometimes, things are great, and sometimes, they are bad."},
+	{"speaker": "You", "text": "Lately though, it feels like the world has just been against you."},
+	{"speaker": "You", "text": "You got passed over for promotion. The company has been cutting benefits."},
+	{"speaker": "You", "text": "Simply put, things have just been... crappy."},
+	
+	{"choices": 
+		[
+			{"text": "First Choice.", "goto": "first_choice"},
+			{"text": "Second Choice.", "goto": "second_choice"}
+		]
+	},
+	
+	{"anchor": "first_choice"},
+	{"speaker": "You", "text": "You are determined to change everything in 2 weeks."},
+	{"speaker": "You", "text": "That, or ... maybe it's time to called it quit."},
+	{"goto": "end"},
+	
+	{"anchor": "second_choice"},
+	{"speaker": "You", "text": "In this company, and maybe this life."},
+	{"speaker": "You", "text": "These 2 weeks starts tomorrow."},
+	{"goto": "end"},
+	
+	{"anchor": "end"},
+	{"speaker": "You", "text": "That was something"}
+]

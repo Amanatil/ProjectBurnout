@@ -33,7 +33,7 @@ offset_right = -0.49597168
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SceneText" type="PanelContainer" parent="." unique_id=1397080516]
+[node name="DialogBox" type="PanelContainer" parent="." unique_id=1397080516]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21300001
@@ -45,7 +45,7 @@ offset_top = -0.13601685
 offset_right = 0.22393799
 offset_bottom = -0.24005127
 
-[node name="DialogLine" type="RichTextLabel" parent="SceneText" unique_id=750967219]
+[node name="DialogLine" type="RichTextLabel" parent="DialogBox" unique_id=750967219]
 layout_mode = 2
 text = "Initial Text"
 
@@ -65,46 +65,7 @@ offset_bottom = -0.008026123
 layout_mode = 2
 text = "Initial Text"
 
-[node name="Control" type="Control" parent="." unique_id=1248721234]
-layout_mode = 1
-anchor_left = 0.46500003
-anchor_top = 0.133
-anchor_right = 0.89100003
-anchor_bottom = 0.55200005
-offset_left = 0.3199463
-offset_top = -0.18399811
-offset_right = -0.43200684
-offset_bottom = -1.6960449
-
-[node name="TextureButton" type="TextureButton" parent="Control" unique_id=826234718]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 213.0
-offset_right = 442.0
-offset_bottom = 267.0
-
-[node name="TextureButton2" type="TextureButton" parent="Control" unique_id=262729494]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 157.0
-offset_right = 442.0
-offset_bottom = 211.0
-
-[node name="TextureButton3" type="TextureButton" parent="Control" unique_id=858084264]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 100.0
-offset_right = 442.0
-offset_bottom = 154.0
-
-[node name="TextureButton4" type="TextureButton" parent="Control" unique_id=1193419532]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 43.0
-offset_right = 442.0
-offset_bottom = 97.0
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=160687819]
+[node name="PlayerStatContainer" type="PanelContainer" parent="." unique_id=160687819]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.84000003
@@ -116,11 +77,11 @@ offset_top = 0.2079773
 offset_right = -0.5280762
 offset_bottom = -0.21606445
 
-[node name="HSplitContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1197024766]
+[node name="PlayerStatSubContainer" type="HBoxContainer" parent="PlayerStatContainer" unique_id=1197024766]
 layout_mode = 2
 alignment = 1
 
-[node name="PlayerStatsList" type="ItemList" parent="PanelContainer/HSplitContainer" unique_id=1977047987]
+[node name="PlayerStatList" type="ItemList" parent="PlayerStatContainer/PlayerStatSubContainer" unique_id=1977047987]
 layout_mode = 2
 allow_search = false
 auto_width = true
@@ -135,7 +96,7 @@ item_1/selectable = false
 item_2/text = "💰Money"
 item_2/selectable = false
 
-[node name="PlayerStatsValue" type="ItemList" parent="PanelContainer/HSplitContainer" unique_id=27894130]
+[node name="PlayerStatValue" type="ItemList" parent="PlayerStatContainer/PlayerStatSubContainer" unique_id=27894130]
 layout_mode = 2
 auto_width = true
 auto_height = true

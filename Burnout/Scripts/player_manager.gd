@@ -12,15 +12,13 @@ var current_money = 0.0
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	current_energy = starting_energy
-	current_sanity = starting_sanity
-	current_money = starting_money
+	update_stat(starting_sanity, starting_energy, starting_money)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func update_stats(sanity: float, energy: float, money: float) -> void:
+func update_stat(sanity: float, energy: float, money: float) -> void:
 	current_energy += sanity
 	current_sanity += energy
 	current_money += money

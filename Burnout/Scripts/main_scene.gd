@@ -4,20 +4,11 @@ extends Node2D
 
 var dialog_index : int = 0
 
-const dialog_lines: Array[String] = [
-		"You: You have been working in the ABC agency as a Senior Designer for 4 years.",
-		"You: Sometimes, things are great, and sometimes, they are bad.",
-		"You: Lately though, it feels like the world has just been against you.",
-		"You: You got passed over for promotion. The company has been cutting benefits.",
-		"You: Simply put, things have just been... crappy.",
-		"You: You are determined to change everything in 2 weeks.",
-		"You: That, or ... maybe it's time to called it quit.",
-		"You: In this company, and maybe this life.",
-		"You: These 2 weeks starts tomorrow."
-	]
+var dialog_lines: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dialog_lines = load_dialog("res://Resources/Story/story.json")
 	dialog_index = 0
 	process_current_line()
 	
@@ -28,19 +19,60 @@ func _input(event: InputEvent) -> void:
 			process_current_line()
 			
 		if dialog_index == len(dialog_lines) - 1:
-			PlayerManager.update_stats(10, -5, 2500)
+			PlayerManager.update_stat(10, -5, 2500)
 			dialog_ui.set_stat()
-
-func parse_line(line: String):
-	var line_info = line.split(":")
-	assert(len(line_info) >= 2)
-	return {
-		"speaker_name": line_info[0],
-		"dialog_line": line_info[1]
-	}
+			
+func load_dialog(file_path):
+	if not FileAccess.file_exists(file_path):
+		printerr("Error: File does not exist: ", file_path)
+		return null
+	
+	# Open the file
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
+		printerr("Error: Failed to open file: ", file_path)
+	
+	# Read content as text
+	var content = file.get_as_text()
+	
+	# Parse the json
+	var json_content = JSON.parse_string(content)
+	if json_content == null:
+		printerr("Error: Failed to parse JSON from file: ", file_path)
+	
+	return json_content
+	
+func get_anchor_position(anchor: String):
+	# Find anchoe entry with matching name
+	for i in range(dialog_lines.size()):
+		if dialog_lines[i].has("anchor") and dialog_lines[i]["anchor"] == anchor:
+			return i
+	
+	# if the anchor was not found
+	printerr("Error: Could not find anchor '" + anchor + "'")
+	return null	
 	
 func process_current_line():
 	var line = dialog_lines[dialog_index]
-	var line_info = parse_line(line)
-	dialog_ui.dialog_line.text = line_info['dialog_line']
-	dialog_ui.speaker_name.text = line_info['speaker_name']
+	
+	# Check if this is a goto command
+	if line.has("goto"):
+		dialog_index = get_anchor_position(line["goto"])
+		process_current_line()
+		return
+		
+	# Check if this is just an anchor declaration
+	if line.has("anchor"):
+		dialog_index += 1
+		process_current_line()
+		return
+		
+	if line.has("choices"):
+		pass
+	else:
+		# Reading line of dialog
+		dialog_ui.dialog_line.text = line["text"]
+		dialog_ui.speaker_name.text = line["speaker"]
+	
+
+		
